@@ -34,3 +34,27 @@ dev.off()
 #> quartz_off_screen 
 #>                 2
 ```
+
+Using it we can now see how much drawing time e.g. the png device is
+responsible for:
+
+``` r
+point_coord <- seq_len(1e4)
+void_plot <- function() {
+  void_dev()
+  plot(point_coord, point_coord)
+  dev.off()
+  NULL
+}
+png_plot <- function() {
+  png(tempfile())
+  plot(point_coord, point_coord)
+  dev.off()
+  NULL
+}
+
+res <- bench::mark(voidev = void_plot(), png = png_plot(), min_iterations = 50)
+plot(res)
+```
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
