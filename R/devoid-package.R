@@ -1,5 +1,5 @@
 #' @keywords internal
 #'
-#' @useDynLib voidev
+#' @useDynLib devoid
 #'
 "_PACKAGE"

@@ -6,5 +6,5 @@
 #'
 #' @export
 void_dev <- function() {
-  invisible(.Call('void_dev', PACKAGE = 'voidev'))
+  invisible(.Call('void_dev', PACKAGE = 'devoid'))
 }
