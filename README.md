@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# voidev
+# devoid
 
 This package provides a graphic device that does no operations. This
 makes it suitable for benchmarking functions that produce graphics as it
@@ -13,20 +13,20 @@ than calling `pdf()` with a temporary file connection.
 
 ## Installation
 
-You can install `voidev` with the remotes package:
+You can install `devoid` with the remotes package:
 
 ``` r
 # install.packages('remotes')
-remotes::install_github('r-lib/voidev')
+remotes::install_github('r-lib/devoid')
 ```
 
 ## Example
 
-`voidev` provides a single function `void_dev()` which is used much like
+`devoid` provides a single function `void_dev()` which is used much like
 any other device:
 
 ``` r
-library(voidev)
+library(devoid)
 
 void_dev()
 plot(1:10, 1:10)
@@ -53,7 +53,7 @@ png_plot <- function() {
   NULL
 }
 
-res <- bench::mark(voidev = void_plot(), png = png_plot(), min_iterations = 50)
+res <- bench::mark(devoid = void_plot(), png = png_plot(), min_iterations = 50)
 plot(res)
 ```
 
