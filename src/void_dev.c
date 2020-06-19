@@ -82,6 +82,23 @@ void void_raster(unsigned int *raster, int w, int h,
   return;
 }
 
+static SEXP void_setPattern(SEXP pattern, pDevDesc dd) {
+    return R_NilValue;
+}
+
+static void void_releasePattern(SEXP ref, pDevDesc dd) {} 
+
+static SEXP void_setClipPath(SEXP path, SEXP ref, pDevDesc dd) {
+    return R_NilValue;
+}
+
+static void void_releaseClipPath(SEXP ref, pDevDesc dd) {}
+
+static SEXP void_setMask(SEXP path, SEXP ref, pDevDesc dd) {
+    return R_NilValue;
+}
+
+static void void_releaseMask(SEXP ref, pDevDesc dd) {}
 
 pDevDesc void_device_new() {
 
@@ -115,7 +132,14 @@ pDevDesc void_device_new() {
   dd->metricInfo = void_metric_info;
   dd->cap = NULL;
   dd->raster = void_raster;
-
+#if R_GE_version >= 13
+  dd->setPattern      = void_setPattern;
+  dd->releasePattern  = void_releasePattern;
+  dd->setClipPath     = void_setClipPath;
+  dd->releaseClipPath = void_releaseClipPath;
+  dd->setMask         = void_setMask;
+  dd->releaseMask     = void_releaseMask;
+#endif
   // UTF-8 support
   dd->wantSymbolUTF8 = (Rboolean) 1;
   dd->hasTextUTF8 = (Rboolean) 1;
@@ -147,6 +171,10 @@ pDevDesc void_device_new() {
   dd->displayListOn = FALSE;
   dd->haveTransparency = 2;
   dd->haveTransparentBg = 2;
+
+#if R_GE_version >= 13
+  dd->deviceVersion = R_GE_definitions;
+#endif
 
   return dd;
 }
