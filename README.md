@@ -3,6 +3,12 @@
 
 # devoid
 
+<!-- badges: start -->
+
+[![R build
+status](https://github.com/r-lib/devoid/workflows/R-CMD-check/badge.svg)](https://github.com/r-lib/devoid/actions)
+<!-- badges: end -->
+
 This package provides a graphic device that does no operations. This
 makes it suitable for benchmarking functions that produce graphics as it
 removes the device implementation from the equation. In contrast to the
@@ -55,6 +61,7 @@ png_plot <- function() {
 
 res <- bench::mark(devoid = void_plot(), png = png_plot(), min_iterations = 50)
 plot(res)
+#> Loading required namespace: tidyr
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
