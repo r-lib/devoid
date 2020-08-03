@@ -1,4 +1,4 @@
-# devoid (development version)
+# devoid 0.1.1
 
 * Added hooks to new graphic engine functionality (#2, @pmur002)
 

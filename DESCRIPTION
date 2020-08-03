@@ -1,7 +1,7 @@
 Package: devoid
 Type: Package
 Title: A Graphic Device that Does Nothing
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     c(person(given = "Thomas Lin",
              family = "Pedersen",
