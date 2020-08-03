@@ -5,6 +5,12 @@
 #' the device implementation from the implementation.
 #'
 #' @export
+#'
+#' @examples
+#' void_dev()
+#' # Any plotting instructions will now have no effect
+#' plot(1:10000, 1:10000)
+#' dev.off()
 void_dev <- function() {
   invisible(.Call('void_dev', PACKAGE = 'devoid'))
 }
