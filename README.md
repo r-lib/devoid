@@ -5,8 +5,7 @@
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/r-lib/devoid/workflows/R-CMD-check/badge.svg)](https://github.com/r-lib/devoid/actions)
+[![R-CMD-check](https://github.com/r-lib/devoid/workflows/R-CMD-check/badge.svg)](https://github.com/r-lib/devoid/actions)
 <!-- badges: end -->
 
 This package provides a graphic device that does no operations. This

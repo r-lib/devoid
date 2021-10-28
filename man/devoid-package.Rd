@@ -4,11 +4,12 @@
 \name{devoid-package}
 \alias{devoid}
 \alias{devoid-package}
-\title{devoid: A Graphic Device That Does Nothing}
+\title{devoid: A Graphic Device that Does Nothing}
 \description{
-In order to properly benchmark graphic drawing code it is necessary
-    to factor out the device implemenation itself so that results are not 
-    related to the specifc graphics device used during benchmarking. The 
+Provides a non-drawing graphic device for benchmarking purpose.
+    In order to properly benchmark graphic drawing code it is necessary
+    to factor out the device implementation itself so that results are not 
+    related to the specific graphics device used during benchmarking. The 
     'devoid' package implements a graphic device that accepts all the required
     calls from R's graphic engine but performs no action. Apart from 
     benchmarking it is unlikely that this device has any practical use.
