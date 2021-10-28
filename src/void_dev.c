@@ -8,9 +8,9 @@
 
 void void_metric_info(int c, const pGEcontext gc, double* ascent,
                      double* descent, double* width, pDevDesc dd) {
-  *ascent = 0.0;
-  *descent = 0.0;
-  *width = 0.0;
+  *ascent = 1.0;
+  *descent = 1.0;
+  *width = 1.0;
 }
 
 void void_clip(double x0, double x1, double y0, double y1, pDevDesc dd) {
@@ -86,7 +86,7 @@ static SEXP void_setPattern(SEXP pattern, pDevDesc dd) {
     return R_NilValue;
 }
 
-static void void_releasePattern(SEXP ref, pDevDesc dd) {} 
+static void void_releasePattern(SEXP ref, pDevDesc dd) {}
 
 static SEXP void_setClipPath(SEXP path, SEXP ref, pDevDesc dd) {
     return R_NilValue;
