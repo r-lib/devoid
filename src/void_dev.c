@@ -100,7 +100,7 @@ static SEXP void_setMask(SEXP path, SEXP ref, pDevDesc dd) {
 
 static void void_releaseMask(SEXP ref, pDevDesc dd) {}
 
-pDevDesc void_device_new() {
+pDevDesc void_device_new(void) {
 
   pDevDesc dd = (DevDesc*) calloc(1, sizeof(DevDesc));
   if (dd == NULL)
@@ -179,7 +179,7 @@ pDevDesc void_device_new() {
   return dd;
 }
 
-void makeDevice() {
+void makeDevice(void) {
   R_GE_checkVersionOrDie(R_GE_version);
   R_CheckDeviceAvailable();
   BEGIN_SUSPEND_INTERRUPTS {
@@ -194,7 +194,7 @@ void makeDevice() {
   } END_SUSPEND_INTERRUPTS;
 }
 
-SEXP void_dev() {
+SEXP void_dev(void) {
 
   makeDevice();
 
