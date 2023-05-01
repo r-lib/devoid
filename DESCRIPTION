@@ -1,15 +1,14 @@
 Package: devoid
 Type: Package
 Title: A Graphic Device that Does Nothing
-Version: 0.1.1.9000
+Version: 0.1.2
 Authors@R: 
     c(person(given = "Thomas Lin",
              family = "Pedersen",
              role = c("aut", "cre"),
-             email = "thomas.pedersen@rstudio.com"),
-      person(given = "RStudio",
+             email = "thomas.pedersen@posit.co"),
+      person(given = "Posit, PBC",
              role = "cph"))
-Maintainer: Thomas Lin Pedersen <thomas.pedersen@rstudio.com>
 Description: Provides a non-drawing graphic device for benchmarking purpose.
     In order to properly benchmark graphic drawing code it is necessary
     to factor out the device implementation itself so that results are not 
