@@ -4,7 +4,8 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r setup, include = FALSE}
+```{r setup}
+#| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -17,28 +18,31 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/r-lib/devoid/workflows/R-CMD-check/badge.svg)](https://github.com/r-lib/devoid/actions)
+[![R-CMD-check](https://github.com/r-lib/devoid/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/devoid/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/r-lib/devoid/graph/badge.svg)](https://app.codecov.io/gh/r-lib/devoid)
 <!-- badges: end -->
-  
-This package provides a graphic device that does no operations. This makes it 
+
+This package provides a graphic device that does no operations. This makes it
 suitable for benchmarking functions that produce graphics as it removes the
 device implementation from the equation. In contrast to the `nulldev()` function
 from [R.devices](https://github.com/HenrikBengtsson/R.devices) package this
-device is a true device implementation that simply does nothing rather than 
+device is a true device implementation that simply does nothing rather than
 calling `pdf()` with a temporary file connection.
 
 ## Installation
 
 You can install `devoid` with the remotes package:
 
-```{r, eval=FALSE}
-# install.packages('remotes')
-remotes::install_github('r-lib/devoid')
+```{r}
+#| eval: false
+# install.packages('pak')
+pak::pak('r-lib/devoid')
 ```
 
 
 ## Example
 
-`devoid` provides a single function `void_dev()` which is used much like any 
+`devoid` provides a single function `void_dev()` which is used much like any
 other device:
 
 ```{r example}
