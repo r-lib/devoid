@@ -1,11 +1,24 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+``` r
+#| include: false
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
 # devoid
 
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/r-lib/devoid/workflows/R-CMD-check/badge.svg)](https://github.com/r-lib/devoid/actions)
+[![R-CMD-check](https://github.com/r-lib/devoid/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/devoid/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/r-lib/devoid/graph/badge.svg)](https://app.codecov.io/gh/r-lib/devoid)
 <!-- badges: end -->
 
 This package provides a graphic device that does no operations. This
@@ -21,8 +34,8 @@ than calling `pdf()` with a temporary file connection.
 You can install `devoid` with the remotes package:
 
 ``` r
-# install.packages('remotes')
-remotes::install_github('r-lib/devoid')
+# install.packages('pak')
+pak::pak('r-lib/devoid')
 ```
 
 ## Example
@@ -60,7 +73,6 @@ png_plot <- function() {
 
 res <- bench::mark(devoid = void_plot(), png = png_plot(), min_iterations = 50)
 plot(res)
-#> Loading required namespace: tidyr
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
